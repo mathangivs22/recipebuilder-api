@@ -1,0 +1,23 @@
+.searchContainer{
+    width: 300px;
+    margin-top: 20px auto;
+    position: relative;
+    align-items: center;
+    margin-left: 400px;
+    margin-top: 25px;
+}
+
+.input{
+    border:none;
+    border-bottom: 1px solid #e3e4dc;
+    padding :10px 20px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    color: #393e46;
+}
+
+.setChatbot{
+    position: relative;
+    float: right;
+}

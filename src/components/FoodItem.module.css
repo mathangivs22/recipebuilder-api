@@ -1,0 +1,42 @@
+.container{
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(0,0,0,0.1);
+    margin: 20px;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.itemImage{
+    max-width: 100%;
+    height: auto;
+}
+
+.itemContent{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.itemImage{
+    font-size: 1em;
+    font-weight: 600;
+    color: #393e46;
+}
+
+.itemButton{
+    background-color: burlywood;
+    border:none;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+.buttonContainer{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}

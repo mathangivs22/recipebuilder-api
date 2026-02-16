@@ -1,0 +1,32 @@
+.cardContainer{
+    max-width:600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px rgba(0,0,0,0.2);
+    border-radius :10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:black;
+}
+
+.recipeName{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.recipeImage{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recipeInstructions{
+    padding: 0px;
+    border-radius: 5px;
+    color:#adaab0;
+}
+
+.ingredients{
+    padding: 10px;
+    
+}
