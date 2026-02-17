@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function AskGroq({ steps, triggerNextStep }) {
+    console.log("AskGroq component mounted!");  
+  console.log("Steps:", steps);
   const [reply, setReply] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function askGroq() {
-      const recipeName = steps["5"]?.value;
+      const recipeName = steps["3"]?.value;
       const question = steps["6"]?.value;
       
       console.log("Recipe name:", recipeName);  // add this to debug

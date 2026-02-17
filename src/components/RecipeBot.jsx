@@ -33,7 +33,7 @@ export default function RecipeBot({setFoodId,setToggle}) {
     },
     {
        id: "7",
-      component: <AskGroq steps={steps} />,
+      component: <AskGroq/>,
       waitAction: true,
       asMessage: false,
     }
