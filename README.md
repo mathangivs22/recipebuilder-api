@@ -12,10 +12,13 @@ The app allows users to explore recipes, filter them based on ingredients, and v
 - Users can search for recipes directly using a clean UI.
 - Recipes are fetched dynamically from the backend API.
 
-### 🤖 Chatbot-Based Recipe Finder
-- Users can switch to a chatbot mode for a more interactive experience.
-- The chatbot asks users to enter an ingredient.
-- Based on the ingredient provided, the app filters recipes and displays relevant results.
+### 🤖 Chatbot-Based Recipe Finder (Powered by Groq + LLM)
+
+- Users can switch to a chatbot mode for a more interactive recipe search experience.
+- The chatbot prompts users to enter an ingredient (e.g., chicken, tomato, pasta).
+- Using Groq-hosted LLaMA/OpenAI-style language model integration, the bot responds conversationally.
+- Based on the ingredient provided, the app filters recipes from the API and displays the most relevant results.
+- Users can click any recipe to view full details, including ingredients and cooking procedure.
 
 ### 📖 Detailed Recipe View
 - When a user clicks on a recipe, the app shows:
