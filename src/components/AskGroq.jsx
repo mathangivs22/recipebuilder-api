@@ -6,7 +6,10 @@ export default function AskGroq({ steps, triggerNextStep }) {
 
   useEffect(() => {
     async function askGroq() {
+      const recipeName = steps["5"]?.value;
       const question = steps["6"]?.value;
+
+
       if (!question) {
         setLoading(false);
         return;
@@ -16,7 +19,10 @@ export default function AskGroq({ steps, triggerNextStep }) {
         const res = await fetch("https://recipebuilder-api.onrender.com/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: question, history: [] }),
+          body: JSON.stringify({ 
+         message: `The user selected the recipe: ${recipeName}. Their question is: ${question}`, 
+        history: [] 
+        }),
         });
         const data = await res.json();
         setReply(data.reply);
