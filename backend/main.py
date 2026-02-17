@@ -116,7 +116,7 @@ def chat(input: ChatInput):
     
     try:
         response = groq_client.chat.completions.create(
-            model="llama3-8b-8192",
+            model="llama3-70b-8192",
             messages=messages,
             max_tokens=500
         )
