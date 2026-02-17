@@ -45,7 +45,7 @@ export default function AskGroq({ steps, triggerNextStep }) {
   return (
     <div>
       <p>{reply}</p>
-      <button onClick={() => triggerNextStep({ value: reply, trigger: "2" })}>
+      <button onClick={() => triggerNextStep({ value: reply, trigger: "6" })}>
         Ask another question
       </button>
       <button onClick={() => triggerNextStep({ value: reply, trigger: "2" })}>
