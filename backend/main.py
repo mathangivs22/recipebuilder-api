@@ -4,6 +4,7 @@ import requests
 from fastapi.middleware.cors import CORSMiddleware
 from groq import Groq
 import os
+import re
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 class ChatInput(BaseModel):
     message: str
