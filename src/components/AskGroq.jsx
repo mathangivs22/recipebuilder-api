@@ -8,7 +8,9 @@ export default function AskGroq({ steps, triggerNextStep }) {
     async function askGroq() {
       const recipeName = steps["5"]?.value;
       const question = steps["6"]?.value;
-
+      
+      console.log("Recipe name:", recipeName);  // add this to debug
+      console.log("Question:", question);        // add this to debug
 
       if (!question) {
         setLoading(false);
@@ -20,13 +22,14 @@ export default function AskGroq({ steps, triggerNextStep }) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ 
-         message: `The user selected the recipe: ${recipeName}. Their question is: ${question}`, 
-        history: [] 
-        }),
+            message: `The user selected the recipe: ${recipeName}. Their question is: ${question}`,
+            history: [] 
+          }),
         });
         const data = await res.json();
         setReply(data.reply);
       } catch (err) {
+        console.log("Groq error:", err);
         setReply("Sorry, couldn't get a response right now.");
       } finally {
         setLoading(false);
@@ -41,7 +44,10 @@ export default function AskGroq({ steps, triggerNextStep }) {
     <div>
       <p>{reply}</p>
       <button onClick={() => triggerNextStep({ value: reply, trigger: "2" })}>
-        Search again
+        Ask another question
+      </button>
+      <button onClick={() => triggerNextStep({ value: reply, trigger: "2" })}>
+        Search new recipe
       </button>
     </div>
   );
