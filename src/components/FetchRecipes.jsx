@@ -15,7 +15,7 @@ export default function FetchRecipes({ steps, triggerNextStep, setFoodId }) {
     }
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/recipes", {
+      const res = await fetch("https://recipebuilder-api.onrender.com/recipes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: input }),

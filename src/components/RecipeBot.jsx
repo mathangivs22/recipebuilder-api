@@ -2,6 +2,7 @@ import React from 'react';
 import ChatBot from 'react-simple-chatbot';
 import FetchRecipes from './FetchRecipes';
 import styles from './recipebot.module.css';
+import AskGroq from './AskGroq';
 
 export default function RecipeBot({setFoodId,setToggle}) {
   const steps = [
@@ -23,8 +24,18 @@ export default function RecipeBot({setFoodId,setToggle}) {
     {
       id: "5",
       message: "Great choice! You selected: {previousValue}",
-      trigger: "2",
+      trigger: "6",
     },
+    {
+      id: "6",
+      user: true,
+      trigger: "7"
+    },
+    {
+      id: "7",
+      component: <AskGroq />,  // new component
+      waitAction: true,
+    }
   ];
 
   return <div>

@@ -2,7 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import requests
 from fastapi.middleware.cors import CORSMiddleware
-import re
+from groq import Groq
+import os
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+class ChatInput(BaseModel):
+    message: str
+    history: list = []  # to maintain conversation context
 
 app = FastAPI()
 
@@ -83,3 +88,39 @@ def get_recipes(input: UserInput):
     except Exception as e:
         print("Error in /recipes endpoint:", e)
         return {"recipes": []}
+
+@app.post("/chat")
+def chat(input: ChatInput):
+    # Build messages array with history for context
+    messages = [
+        {
+            "role": "system",
+            "content": """You are a friendly recipe and cooking assistant. 
+            You help users with:
+            - Recipe suggestions based on ingredients they have
+            - Cooking tips and techniques
+            - Ingredient substitutions
+            - Meal planning
+            Keep responses concise, friendly and helpful.
+            If asked about non-food topics, politely redirect to cooking."""
+        }
+    ]
+    
+    # Add conversation history for context
+    for msg in input.history:
+        messages.append(msg)
+    
+    # Add current user message
+    messages.append({"role": "user", "content": input.message})
+    
+    try:
+        response = groq_client.chat.completions.create(
+            model="llama3-8b-8192",
+            messages=messages,
+            max_tokens=500
+        )
+        reply = response.choices[0].message.content
+        return {"reply": reply}
+    except Exception as e:
+        print("Groq error:", e)
+        return {"reply": "Sorry, I am having trouble responding right now. Please try again."}
