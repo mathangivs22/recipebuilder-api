@@ -3,9 +3,13 @@ import { useEffect, useState } from "react";
 export default function FetchRecipes({ steps, triggerNextStep, setFoodId }) {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const hasFetched = useRef(false);
 
   useEffect(() => {
   async function fetchFood() {
+     if (hasFetched.current) return;  
+        hasFetched.current = true;  
+
     const input = steps["2"]?.value;
     console.log("Fetching recipes for:", input);
 
