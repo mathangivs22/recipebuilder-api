@@ -56,7 +56,9 @@ export default function FetchRecipes({ steps, triggerNextStep, setFoodId }) {
       <div>
         <p>No matching recipes found 😢</p>
         <button
-          onClick={() => triggerNextStep({ value: "No recipe found", trigger: "5" })}
+          onClick={() => {
+            console.log(meals);
+            triggerNextStep({ value: "No recipe found", trigger: "5" })}}
         >
           Continue
         </button>

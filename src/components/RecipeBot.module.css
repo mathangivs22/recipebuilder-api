@@ -1,4 +1,85 @@
 .setChatbot{
     position: relative;
     float: right;
+    margin-left: 30px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chatBox {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userMessage {
+    align-self: flex-end;
+    background: #4CAF50;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 18px;
+    max-width: 70%;
+}
+
+.botMessage {
+    align-self: flex-start;
+    background: #f1f1f1;
+    padding: 8px 14px;
+    border-radius: 18px;
+    max-width: 70%;
+}
+
+.recipesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.recipeButton {
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.inputRow {
+    display: flex;
+    gap: 8px;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.sendButton {
+    padding: 10px 16px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.newSearch {
+    padding: 10px 16px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
