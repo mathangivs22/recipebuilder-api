@@ -20,6 +20,7 @@ export default function RecipeBot({setFoodId,setToggle}) {
       id: '3',
       component:<FetchRecipes setFoodId={setFoodId}/>,
       waitAction: true,
+      trigger: '5',
     },
     {
       id: "5",
